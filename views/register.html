@@ -14,64 +14,52 @@
 </head>
 <body screen_capture_injected="true">
     <div class="container">
-        <form class="col-sm-offset-4 col-sm-4 form-horizontal" role="form" method="post" onsubmit="return false">
+        <form class="form-horizontal" method="post">
             <fieldset>
-                <legend></legend>
-                <div class="panel panel-default">
-                <div class="panel-heading">
-                    <p class="tc">注册信息</p>
-                </div>
-                <div class="panel-body m15">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-user"></span>
-                        </span>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" required>
+                <legend>用户注册</legend>
+                <div class="control-group">
+                    <label class="control-label" for="username">用户名</label>
+                    <div class="controls">
+                        <input type="text" class="input-xlarge" id="username" name="username">
+                        <p class="help-block">你的账户名称，用于登录和显示。</p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-                        </span>
-                        <input type="text" class="form-control" id="password" name="password" placeholder="请输入密码" required>
-                    </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">口令</label>
+                    <div class="controls">
+                        <input type="password" class="input-xlarge" id="password" name="password">
+                    </div> 
                 </div>
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-lock"></span>
-                        </span>
-                        <input type="text" class="form-control" id="password1" name="password1" placeholder="请再次输入密码" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block" id="register1">注册</button>
-                </div>
-                <div class="form-group">
-                        <button type="button" class="btn btn-info col-sm-2 col-sm-offset-10" id="login1">登录</button>
+                <div class="control-group">
+                <label class="control-label"  for="password-repeat">重复输入口令</label>
+                <div class="controls">
+                <input type="password" class="input-xlarge" id="password1"
+                name="password-repeat">
                 </div>
                 </div>
+                <div class="form-actions">
+                <button type="submit" id="register1" class="btn btn-primary">注册</button>
                 </div>
             </fieldset>
-        </form>
+        </form> 
     </div>
 
     <script type="text/javascript" src="javascripts/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
     $(function(){ 
         $("#login1").click(function(){ 
             location.href = 'login';
         });
         $("#register1").click(function(){ 
+            alert(1)
             var username = $("#username").val();
             var password = $("#password").val();
             var password1 = $("#password1").val();
             if(password !== password1){ 
                 $("#password").css("border","1px solid red");
                 $("#password1").css("border","1px solid red");
+                alert(password);
             }else if(password === password1){
                 var data = {"username":username,"password":password};
                 $.ajax({ 
@@ -80,17 +68,19 @@
                     data: data,
                     success: function(data,status){ 
                         if(status == 'success'){ 
+                            alert(1)
                             location.href = 'login';
                         }
                     },
                     error: function(data,err){ 
+                            alert(2)
                             location.href = 'register';
                     }
             }); 
         }
         });
     });
-</script>
+</script>-->
 </body>
 </head>
 </html>
