@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.post('/',function(req,res,next){
     console.log(req.body)
 	var md5 = crypto.createHash('md5');
- var password = md5.update(req.body.password).digest('base64');
+    var password = md5.update(req.body.password).digest('base64');
 
  User.get(req.body.username, function(err, user) {
      console.log('err')
