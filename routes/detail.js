@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res,next){
+    
     console.log(req.body)
     var collection_name=req.body.collection_name;
     var page=req.body.page
@@ -21,6 +22,7 @@ router.post('/',function(req,res,next){
          collection.find().limit(10).skip(nums).toArray(function(e,docs){
              if(e) throw e ;
              //console.log(docs) ;
+             res.setHeader("Access-Control-Allow-Origin", "*");
              res.send(docs)
          }) ; 
      }) ;
