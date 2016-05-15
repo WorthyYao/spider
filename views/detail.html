@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= title %></title>
+	<!--<title><%= title %></title>-->
 </head>
 <body>
-	<h2>Detail Page</h2>
+    <div id="book-list">
+
+    </div>
     
+    
+    
+     
+<script id="book-handlebars" type="text/x-handlebars-template"> 
+    {{#each data}}
+         <ul class="subject-item">
+            <li style="list-style-type:none;">
+                <div class="info" >
+                    <div class="name">{{name}}</div>
+                    <div class="author">{{author}}</div>
+                    <div class="nums">{{nums}}</div>
+                    <div class="score">{{score}}</div>
+                </div>
+                
+            </li>      
+        </ul> 
+    {{/each}}     
+</script>
+<div id="pagination-files-box"  class="pagination-box">
+	    <ul id="pagination-files" class="pagination pagination-sm"></ul>
+    </div>
+<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/handlebars.js"></script>
+<script type="text/javascript" src="javascripts/home.js"></script>
+<script type="text/javascript" src="javascripts/detail.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.twbsPagination.min.js"></script>
 </body>
 </html>
